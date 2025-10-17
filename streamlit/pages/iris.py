@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-model = pickle.load(open("model/model_final.pkl","rb"))
+model = pickle.load(open("model_final.pkl","rb"))
 
 st.title("IRIS PREDICTION APP")
 st.header("Enter the details")
@@ -23,4 +23,5 @@ with st.form('iris_app_form'):
 
 if submitted:
     predition =model.predict([[sl,pl,sw,pw]])
+
     st.success(f"Predicted species {predition}")
